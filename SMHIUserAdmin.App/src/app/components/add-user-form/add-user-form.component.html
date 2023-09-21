@@ -1,0 +1,48 @@
+<div class="user-form-container">
+  <h3>Add New User</h3>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    
+   
+  
+    <div class="input-group">
+      <label for="FirstName">First Name:</label>
+      <input type="text" id="FirstName" formControlName="FirstName">
+      <div *ngIf="userForm.controls['FirstName'].touched && userForm.controls['FirstName'].invalid" 
+          class="error-message">
+        Please enter a first name
+      </div>
+    </div>
+    
+   
+    <div class="input-group">
+      <label for="LastName">Last Name:</label>
+      <input type="text" id="LastName" formControlName="LastName">
+      <div *ngIf="userForm.controls['LastName'].touched && userForm.controls['LastName'].invalid" 
+          class="error-message">
+        Please enter a last name
+      </div>
+    </div>
+    
+   
+    <div class="input-group">
+      <label for="City">City:</label>
+      <input type="text" id="City" formControlName="City">
+      <div *ngIf="userForm.controls['City'].touched && userForm.controls['City'].invalid" 
+          class="error-message">
+        Please enter a city
+      </div>
+    </div>
+    
+
+    <div class="input-group">
+      <label for="Role">Role:</label>
+      <input type="text" id="Role" formControlName="Role">
+      <div *ngIf="userForm.controls['Role'].touched && userForm.controls['Role'].invalid" 
+          class="error-message">
+        Please enter a role
+      </div>
+    </div>
+    
+    <button type="submit" [disabled]="!userForm.valid">Submit</button>
+  </form>
+</div>

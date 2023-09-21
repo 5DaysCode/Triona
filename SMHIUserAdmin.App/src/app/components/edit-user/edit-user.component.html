@@ -1,0 +1,7 @@
+<h2>Edit User Component</h2>
+
+
+<app-add-user-form
+  [user]="(user$ | async) ?? undefined"
+  (userSubmit)="onUserSubmit($event)"
+></app-add-user-form>

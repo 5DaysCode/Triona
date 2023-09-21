@@ -1,0 +1,75 @@
+.welcome-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    padding: 2rem;
+    text-align: center;
+    background-color: #f4f4f8;
+    
+    @media (max-width: 768px) {
+        padding: 1rem;
+    }
+}
+
+.welcome-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #1a73e8;
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        font-size: 1.5rem;
+
+        @media (max-width: 768px) {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.welcome-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    
+    p {
+        max-width: 800px;
+        font-size: 1.2rem;
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+}
+
+
+.navigate-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #1a73e8;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #145cbf;
+    }
+}

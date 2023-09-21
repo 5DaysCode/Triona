@@ -1,0 +1,37 @@
+
+
+<div class="user-list-container">
+  
+    <button (click)="toggleForm()">Add New User</button>
+
+    <div *ngIf="showForm" class="user-form-container">
+      <app-add-user-form (userSubmit)="onUserSubmit($event)"></app-add-user-form>
+    </div>
+    
+  
+    <h2>User List</h2>
+    <ul>
+        <!-- Loop through each user and display their details -->
+        <li *ngFor="let user of users$ | async" class="user-item">
+            <div class="user-details">
+                <span class="user-name">{{ user.firstName }} {{ user.lastName }}</span>
+                <span class="user-city">City: {{ user.city }}</span>
+                <span class="user-role">Role: {{ user.role }}</span>
+                <span class="user-last-active">Last Active: {{ user.isActive ? 'Active' : 'Inactive' }}</span>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="user-actions">
+               
+                <button (click)="navigateToEditUser(user.id)">Edit</button>
+                <button (click)="fetchWeather(user.city, user.id)">Show Weather</button>
+
+    <!-- Weather details will be displayed here when fetched -->
+    <div class="weather-info" *ngIf="weatherData[user.id]">
+        Temperature: {{ weatherData[user.id].temperature }}°C
+    </div>
+                <button (click)="deleteUser(user.id)">Delete</button>
+            </div>
+        </li>
+    </ul>
+</div>
